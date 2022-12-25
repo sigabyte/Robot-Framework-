@@ -18,13 +18,16 @@ Search Brave Heart in Google
     
     ${result02}    Get Text    ${searchResultText}    
     Log To Console    ${result02}
-    
+
 Search Harry Potter in Google
     Input Text    ${searchBox}    Harry Potter
     Press Keys    ${searchBox}    RETURN
         
     ${result03}    Get Text    ${searchResultText}    
-    Log To Console    ${result03} 
+    Log To Console    ${result03}
+    
+    Log To Console    All tests succesfully completed
+     
 
        
 
