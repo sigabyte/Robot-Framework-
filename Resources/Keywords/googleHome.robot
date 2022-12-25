@@ -1,32 +1,22 @@
 *** Settings ***
 Library    SeleniumLibrary
 
-Variables    ../TestData/testdata.py
+
 Variables    ../Locators/locators.py
+Variables    ../TestData/testdata.py
 
 *** Keywords ***
-Search The Lord of the Rings in Google
-    Input Text    ${searchBox}    The Lord of the Rings
-    Press Keys    ${searchBox}    RETURN
-        
-    ${result01}    Get Text    ${searchResultText}
-    Log To Console    ${result01}
+Fill Searchbox in Google
+    [Arguments]    ${words}
+    Input Text    ${searchBox}    ${words}
 
-Search Brave Heart in Google
-    Input Text    ${searchBox}    Brave Heart
-    Press Keys    ${searchBox}    RETURN
-    
-    ${result02}    Get Text    ${searchResultText}    
-    Log To Console    ${result02}
+Press Enter Key
+    Press Keys    ${searchBox}    ENTER
 
-Search Harry Potter in Google
-    Input Text    ${searchBox}    Harry Potter
-    Press Keys    ${searchBox}    RETURN
-        
-    ${result03}    Get Text    ${searchResultText}    
-    Log To Console    ${result03}
+Get Result Text And Write To Console
+    ${resultText}    Get Text    ${searchResultText}
+    Log To Console    ${resultText}
     
-    Log To Console    All tests succesfully completed
      
 
        

@@ -1,6 +1,3 @@
-url="http://www.google.com"
-browser="Chrome"
-
-text1="The Lord of the Rings"
-text2="Brave Heart"
-text3="Harry Potter"
+testWords=["The Lord of the Rings","Brave Heart","Harry Potter"]
+url = "https://www.google.com"
+browser = "Chrome"

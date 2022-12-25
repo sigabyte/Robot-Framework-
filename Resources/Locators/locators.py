@@ -1,2 +1,2 @@
-searchBox="//input[@name='q']"
-searchResultText="//div[@id='result-stats']"
+searchBox = "name=q"
+searchResultText = "id=result-stats"

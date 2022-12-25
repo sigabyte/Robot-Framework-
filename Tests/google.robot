@@ -1,11 +1,3 @@
-# BeforeClass ile driver'i olusturun ve class icinde static yapin
-    Maximize edin ve 10 sn bekletin
-    http://www.google.com adresine gidin
-    arama kutusuna "The Lord of the Rings" yazip, cikan sonuc sayisini yazdirin
-    arama kutusuna "Brave Heart" yazip, cikan sonuc sayisini yazdirin
-    arama kutusuna "Harry Potter" yazip, cikan sonuc sayisini yazdirin
-    AfterClass ile kapatin
-#
 *** Settings ***
 Library    SeleniumLibrary
 
@@ -14,22 +6,27 @@ Variables    ../Resources/Locators/locators.py
 
 
 Test Setup    Open Browser    ${url}    ${browser}
-#Test Teardown    Close All Browsers    
+Test Teardown    Close All Browsers    
 
 Resource    ../Resources/Keywords/googleHome.robot
 
 
 *** Test Cases ***
-test01
-    [Documentation]    Search The Lord of the rings in Google
-    Search The Lord of the Rings in Google
+Search The Lord of the rings in Google
+    Fill Searchbox in Google    ${testWords}[0]
+    Press Enter Key
+    Get Result Text And Write To Console
 
-test02
-    [Documentation]    Search Brave Heart in Google
-    Search Brave Heart in Google
+Search Brave Hearts in Google
+    Fill Searchbox in Google    ${testWords}[1]
+    Press Enter Key
+    Get Result Text And Write To Console
 
-test03
-    [Documentation]    Search Harry Potter in Google
-    Search Harry Potter in Google    
+Search Harry Potters in Google
+    Fill Searchbox in Google    ${testWords}[2]
+    Press Enter Key
+    Get Result Text And Write To Console        
+    
+
 
 
