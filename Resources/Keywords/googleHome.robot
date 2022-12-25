@@ -15,6 +15,7 @@ Press Enter Key
 
 Get Result Text And Write To Console
     ${resultText}    Get Text    ${searchResultText}
+    Capture Page Screenshot
     Log To Console    ${resultText}
     
      
